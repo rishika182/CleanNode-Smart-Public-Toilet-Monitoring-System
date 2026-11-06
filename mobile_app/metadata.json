@@ -1,0 +1,6 @@
+{
+  "name": "CleanNode",
+  "description": "CleanNode - IoT-based Public Sanitation System with real-time sensor monitoring, Predictive Cleanliness Index (PCI), Danger Zone escalation, and multilingual support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

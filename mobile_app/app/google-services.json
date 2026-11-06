@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "495207195507",
+    "firebase_url": "https://cleannode-smartsanitation-default-rtdb.firebaseio.com",
+    "project_id": "cleannode-smartsanitation",
+    "storage_bucket": "cleannode-smartsanitation.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495207195507:android:0252eb17a80b10011d1b06",
+        "android_client_info": {
+          "package_name": "com.example.cleannode_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495207195507-j45g62p51ulkq133pvvtjjgid4nr932v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cleannode_mobile",
+            "certificate_hash": "e32a604834795f9bce63ac31672ce4e99d5660ea"
+          }
+        },
+        {
+          "client_id": "495207195507-cr5q8c8f9nj05ju62sl6us612sa0rl9j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBo4oAv8ryoNRSDUXWExfHbretAnXOfIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "495207195507-cr5q8c8f9nj05ju62sl6us612sa0rl9j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "495207195507-r5a77nqr1pqahpajbmu7pb7ativr3a7m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cleannodeMobile"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495207195507:android:50b7d92a653fa3c01d1b06",
+        "android_client_info": {
+          "package_name": "com.pes.cleannode.stimulation_cn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495207195507-cr5q8c8f9nj05ju62sl6us612sa0rl9j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBo4oAv8ryoNRSDUXWExfHbretAnXOfIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "495207195507-cr5q8c8f9nj05ju62sl6us612sa0rl9j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "495207195507-r5a77nqr1pqahpajbmu7pb7ativr3a7m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cleannodeMobile"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495207195507:android:61d3cca432c17d441d1b06",
+        "android_client_info": {
+          "package_name": "in.bbmp.cleannode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495207195507-cr5q8c8f9nj05ju62sl6us612sa0rl9j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBo4oAv8ryoNRSDUXWExfHbretAnXOfIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "495207195507-cr5q8c8f9nj05ju62sl6us612sa0rl9j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "495207195507-r5a77nqr1pqahpajbmu7pb7ativr3a7m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cleannodeMobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

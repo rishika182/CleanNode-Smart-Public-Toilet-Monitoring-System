@@ -1,0 +1,53 @@
+export const translations = {
+  en: {
+    appName: "CleanNode",
+    tagline: "IoT-based Public Sanitation System",
+    welcome: "Welcome to CleanNode",
+    loginSubtitle: "Enter mobile number to continue",
+    mobileNumber: "Mobile Number (+91)",
+    sendOtp: "Send OTP",
+    enterOtp: "Enter 6-Digit OTP",
+    verifyLogin: "Verify & Login",
+    smartRanking: "Smart Ranking: Prefers cleaner toilet within 50m tolerance band",
+    monitoredPublic: "Public (Monitored)",
+    unmonitoredPrivate: "Private (Unmonitored)",
+    cleanlinessDataUnavailable: "Cleanliness data unavailable",
+    dangerZoneEscalation: "Danger Zone Escalation Ladder",
+    proofOfCleaning: "Proof of Cleaning (Camera Upload)",
+    offlineBanner: "Offline Mode: Cached locally on device"
+  },
+  kn: {
+    appName: "ಕ್ಲೀನ್‌ನೋಡ್ (CleanNode)",
+    tagline: "ಐಒಟಿ ಆಧಾರಿತ ಸಾರ್ವಜನಿಕ ಸ್ವಚ್ಛತಾ ವ್ಯವಸ್ಥೆ",
+    welcome: "ಕ್ಲೀನ್‌ನೋಡ್‌ಗೆ ಸುಸ್ವಾಗತ",
+    loginSubtitle: "ಮುಂದುವರಿಯಲು ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ",
+    mobileNumber: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ (+91)",
+    sendOtp: "ಒಟಿಪಿ ಕಳುಹಿಸಿ",
+    enterOtp: "೬ ಅಂಕಿಯ ಒಟಿಪಿ ನಮೂದಿಸಿ",
+    verifyLogin: "ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಲಾಗಿನ್ ಆಗಿ",
+    smartRanking: "ಸ್ಮಾರ್ಟ್ ಶ್ರೇಯಾಂಕ: ೫೦ ಮೀ ವ್ಯಾಪ್ತಿಯಲ್ಲಿ ಸ್ವಚ್ಛ ಶೌಚಾಲಯಕ್ಕೆ ಆದ್ಯತೆ",
+    monitoredPublic: "ಪರಿಶೀಲಿತ ಸಾರ್ವಜನಿಕ (ಲೈವ್ ಐಒಟಿ)",
+    unmonitoredPrivate: "ಖಾಸಗಿ (ಮಾಲ್/ಹೋಟೆಲ್ - ಡೇಟಾ ಇಲ್ಲ)",
+    cleanlinessDataUnavailable: "ಸ್ವಚ್ಛತಾ ಸೂಚ್ಯಂಕ ಲಭ್ಯವಿಲ್ಲ",
+    dangerZoneEscalation: "ಅಪಾಯ ವಲಯ ಏರಿಕೆ ಹಂತಗಳು",
+    proofOfCleaning: "ಸ್ವಚ್ಛತೆಯ ಫೋಟೋ ಪುರಾವೆ",
+    offlineBanner: "ಆಫ್‌ಲೈನ್ ಮೋಡ್: ಸ್ಥಳೀಯವಾಗಿ ಸಂಗ್ರಹಿಸಲಾಗಿದೆ"
+  },
+  hi: {
+    appName: "क्लीननोड (CleanNode)",
+    tagline: "आईओटी आधारित सार्वजनिक स्वच्छता निगरानी प्रणाली",
+    welcome: "क्लीननोड में आपका स्वागत है",
+    loginSubtitle: "जारी रखने के लिए मोबाइल नंबर दर्ज करें",
+    mobileNumber: "मोबाइल नंबर (+91)",
+    sendOtp: "ओटीपी भेजें",
+    enterOtp: "6 अंकों का ओटीपी दर्ज करें",
+    verifyLogin: "सत्यापित करें और लॉगिन करें",
+    smartRanking: "स्मार्ट रैंकिंग: 50 मीटर के दायरे में स्वच्छ शौचालय को प्राथमिकता",
+    monitoredPublic: "निगरानीकृत सार्वजनिक (लाइव आईओटी)",
+    unmonitoredPrivate: "निजी (मॉल/होटल - डेटा उपलब्ध नहीं)",
+    cleanlinessDataUnavailable: "स्वच्छता डेटा अनुपलब्ध",
+    dangerZoneEscalation: "खतरा क्षेत्र स्वचालित वृद्धि सोपान",
+    proofOfCleaning: "सफाई का फोटो प्रमाण",
+    offlineBanner: "ऑफलाइन मोड: स्थानीय रूप से सहेजा गया डेटा"
+  }
+};

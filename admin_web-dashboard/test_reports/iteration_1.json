@@ -1,0 +1,43 @@
+{
+  "summary": "Full-stack testing of CleanNode dashboard. Backend: 39 pytest cases across auth (JWT bearer, roles, bad creds, bad/no token, bcrypt $2b$ hash), snapshot (source=firebase, 4 facilities/16 cubicles, SRS PCI bands 75/45), facilities + detail + 404, alerts, anomalies, history (+facility filter), analytics (24 hourly buckets, per-facility), heatmap (lat/lng per facility), staff (no _id/password_hash leak), assignments GET/PATCH with MongoDB override persistence verified via GET+snapshot, settings GET/PUT with admin-only RBAC (staff=403) and 422 validation - ALL 39 PASSED. Frontend (Playwright, desktop 1920 + mobile 390): unauthenticated / redirects to /login; invalid creds show login-error and stay on login; admin + staff login work; token stored in localStorage cn_token; invalid/expired token is cleared and redirects to /login; all 12 nav routes render with data (live-table 16 rows, alerts/maintenance/anomalies 16 items each, heatmap 4 markers + area drill-down cards, analytics 5 recharts, facility detail 6 cubicle cards + PCI/gas trend chart + duty list); duty status change via Select fires PATCH, shows success toast and persists after reload; history facility filter narrows 90 -> 17 rows; admin settings save persists after reload; staff settings read-only with warning and no Save button; logout clears token and returns to /login; mobile drawer nav works. No console errors, no 5xx. No blocking defects found.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "/api/auth/login", "issue": "No rate limiting / brute-force lockout - unlimited wrong-password attempts are accepted (playbook expects lockout after 5 fails). Design uses Bearer JWT in localStorage instead of httpOnly cookies, so cookie/CSRF hardening is absent by design."},
+      {"endpoint": "CORS middleware", "issue": "allow_origins defaults to '*' (CORS_ORIGINS unset). Fine because allow_credentials=False, but explicit origins are preferable."},
+      {"endpoint": "app startup/shutdown", "issue": "Uses deprecated @app.on_event; migrate to FastAPI lifespan handler."},
+      {"endpoint": "/api/alerts", "issue": "Low-PCI threshold hardcoded to 55 instead of reading configurable settings (pci_moderate_min / danger_zone_pci), so Settings changes do not affect alert selection."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "Login.jsx", "issue": "Email/password inputs are pre-filled with real admin credentials (admin@cleannode.in / admin123) and demo credentials are printed on the page - acceptable for demo, but should be removed for production.", "selector": "[data-testid=\"login-email\"]", "priority": "LOW"},
+      {"component": "FacilityDetail duty list", "issue": "'Duty assignments for this facility' list has no data-testid on the container/rows (hinders automated assertions).", "selector": "n/a", "priority": "LOW"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "City Heatmap", "issues": ["Map is a synthetic dotted grid (no real map tiles); markers derive x/y from lat/lng so positions look arbitrary and can crowd. Functional per FR11 but visually approximate."]},
+      {"screen": "Settings (staff)", "issues": ["Settings nav item is hidden for staff (adminOnly), yet the page is reachable by direct URL and shows the read-only view - inconsistent with the spec statement 'Staff sees read-only fields and a warning'. Decide: show nav item for staff, or drop the read-only view."]}
+    ]
+  },
+  "test_report_links": ["/app/backend/tests/backend_test.py", "/app/test_reports/pytest/pytest_results.xml"],
+  "action_items": [
+    "Optional: add login rate limiting/lockout on /api/auth/login",
+    "Optional: make /api/alerts low-PCI cutoff use configurable settings instead of hardcoded 55",
+    "Optional: expose Settings nav for staff (read-only) or restrict route entirely for consistency",
+    "Optional: remove prefilled/demo credentials from the login form before production",
+    "Optional: replace deprecated @app.on_event with lifespan"
+  ],
+  "critical_code_review_comments": [
+    "server.py alerts() uses magic number 55 for the low-PCI cutoff while thresholds are otherwise configurable in /api/settings.",
+    "Files are all under 400 lines, async Mongo usage is correct, _id is excluded from all responses, env vars used everywhere - no structural issues found."
+  ],
+  "updated_files": ["/app/backend/tests/backend_test.py"],
+  "success_rate": {"backend": "100% (39/39)", "frontend": "100% of tested flows"},
+  "seed_data_creation": "No new seed data. Test artifacts cleaned up: assignment override for duty 1786987280475 deleted and settings restored to defaults (gas_threshold=2500).",
+  "should_call_test_agent_after_fix": false,
+  "should_main_agent_self_test": true,
+  "test_credentials": "admin@cleannode.in/admin123 (admin), staff@cleannode.in/staff123 (staff) - both valid; /app/memory/test_credentials.md present and accurate",
+  "context_for_next_testing_agent": "Backend regression suite at /app/backend/tests/backend_test.py (39 tests, pytest.ini runs -n 2 loadscope). Data is live Firebase RTDB (source=firebase) so PCI/alert values change - assert structure, not numbers. All 4 facilities currently Dirty band; only 3 of 4 facilities have duty assignments (4th shows 'No duty assignments recorded'). Duty status changes are stored as MongoDB assignment_overrides; delete the override doc to reset. Settings changes persist in db.settings _id='thresholds' - restore defaults after testing.",
+  "rca_of_the_issue": "No defects requiring RCA; all reported items are hardening/UX polish observations."
+}
